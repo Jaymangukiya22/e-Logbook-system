@@ -45,13 +45,13 @@ a, li, button{
     text-decoration: none;
 }
 header{
-  
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 20px 10%;
     padding-right: 60px;
-    
+    margin-left: -20px;
     
 }
 .logo{
@@ -86,11 +86,14 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #3e8e41; 
-    transition: color 0.3s;}
+    transition: color 0.3s;
+    
+}
 
 nav ul li.about:hover a {
     color: #3e8e41; 
     transition: color 0.3s; 
+    
 }
 
 nav ul li.home:hover a {

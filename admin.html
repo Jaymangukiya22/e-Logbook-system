@@ -27,23 +27,24 @@
       </header>  
       <div class="center">
         <h1>Login-Admin</h1>
-        <form method="post">
+        <form >
             <div class="textfield">
-                <input type="text" required>
-                <label >Username</label>
+                <input type="text" class="admin_username" id="admin_username" required>
+                <label for="admin_username" >Username</label>
             </div>
             <div class="textfield">    
-                <input type="password"  required>
-                <label>Password</label>
+                <input type="password" class="admin_password" id="admin_password" required>
+                <label for="admin_password">Password</label>
             </div>
             <div class="pass">
                 Forgot Password?
             </div> 
-            <input type="submit" value="Login"><br/><br/>
+            <input type="submit" value="Login" id="myButton" onclick="btnclk()"><br/><br/>
            
         </form>
     </div>    
     
-    
+    <script src="admin.js"></script>
+  
 </body>
 </html>

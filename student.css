@@ -101,7 +101,7 @@ nav ul li.home:hover a {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
       }
       body{
         margin: 0;
@@ -114,26 +114,27 @@ nav ul li.home:hover a {
       .center{
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 50.5%;
         transform: translate(-50%, -50%);
         width: 400px;
-        background: white;
+        /* background: white; */
+        background: rgba(255, 255, 255, 0.3);
         border-radius: 10px;
         box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
       }
       .center h1{
         text-align: center;
-        padding: 20px 0;
-        border-bottom: 1px solid silver;
+        padding: 20px;
+        border-bottom: 1px solid #000000;
       }
       .center form{
-        padding: 0 40px;
+        padding: 0px 40px;
         box-sizing: border-box;
       }
       form .textfield{
         position: relative;
-        border-bottom: 2px solid #adadad;
-        margin: 30px 0;
+        border-bottom: 2px solid #000000;
+        margin: 30px 0px;
       }
       .textfield input{
         width: 100%;
@@ -148,7 +149,7 @@ nav ul li.home:hover a {
         position: absolute;
         top: 50%;
         left: 5px;
-        color: #adadad;
+        color: #000000;
         transform: translateY(-50%);
         font-size: 16px;
         pointer-events: none;
@@ -175,7 +176,7 @@ nav ul li.home:hover a {
       }
       .pass{
         margin: -5px 0 20px 5px;
-        color: #a6a6a6;
+        color: #000;
         cursor: pointer;
       }
       .pass:hover{
