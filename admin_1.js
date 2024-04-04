@@ -1,9 +1,9 @@
 document.getElementById("add_rt").addEventListener("click", function() {
     var route = document.getElementById("route");
-    if (route.style.display === "none") {
-      route.style.display = "block";
-    } else {
+    if (route.style.display === "block") {
       route.style.display = "none";
+    } else {
+      route.style.display = "block";
     }
 });
 var counter = 0; // Counter to track IDs
@@ -20,13 +20,21 @@ var counter = 0; // Counter to track IDs
     // Create remove button for each added text field
     var removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
-    removeButton.classList.add("removeTextFieldBtn");
+    pickup.appendChild(removeButton);
+    // removeButton.classList.add("removeTextFieldBtn");
     removeButton.addEventListener("click", function() {
       pickup.removeChild(newpickup);
       pickup.removeChild(removeButton);
     });
-    pickup.appendChild(removeButton);
     pickup.appendChild(document.createElement("br"));
 
     counter++; // Increment counter for the next text field
   });
+document.getElementById("update_rt").addEventListener("click", function() {
+    var update = document.getElementById("update");
+    if (update.style.display === "block") {
+      update.style.display = "none";
+    } else {
+      update.style.display = "block";
+    }
+});
