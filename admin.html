@@ -27,21 +27,20 @@
       </header>  
       <div class="center">
         <h1>Login-Admin</h1>
-        <form >
-            <div class="textfield">
-                <input type="text" class="admin_username" id="admin_username" required>
-                <label for="admin_username" >Username</label>
-            </div>
-            <div class="textfield">    
-                <input type="password" class="admin_password" id="admin_password" required>
-                <label for="admin_password">Password</label>
-            </div>
-            <div class="pass">
-                Forgot Password?
-            </div> 
-            <input type="submit" value="Login" id="myButton" onclick="btnclk()"><br/><br/>
-           
-        </form>
+        <form action="" method="post"> <!-- Set the action to your PHP script -->
+          <div class="textfield">
+              <input type="text" class="admin_username" id="admin_username" name="admin_username" required>
+              <label for="admin_username">Username</label>
+          </div>
+          <div class="textfield">    
+              <input type="password" class="admin_password" id="admin_password" name="admin_password" required>
+              <label for="admin_password">Password</label>
+          </div>
+          <div class="pass">
+              Forgot Password?
+          </div> 
+          <input type="submit" value="Login" id="myButton" onclick="btnclk()"> <!-- Remove the onclick attribute -->
+      </form>
     </div>    
     
     <script src="admin.js"></script>

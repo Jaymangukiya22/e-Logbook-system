@@ -26,8 +26,14 @@ fieldset{
     top: 35px;
     left: 350px;
     width: 1000px;
-    height: 800px;
+    height: 650px;
     border: 2px solid black;
     font-size: larger;
     font-weight: 500;
     }
+#date-time{
+    
+    color: white;
+    background-color: black;
+    inline-size: 300px;
+    font-size: medium;}

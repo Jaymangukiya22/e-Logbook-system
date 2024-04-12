@@ -18,19 +18,18 @@
   <button id="update_rt">Update Route</button>
   <button>Add Student</button>
   <button>Remove Student</button>
+  <button>Add/Update Driver</button>
   
 </div>
 <div id="route">
-  <form>
+  <form method="POST" action="admin_db.php">
     <label for="rt_no">Route Number</label>
-    <input type="number" id="rt_no" placeholder="Assign Route Number"><br/>
+    <input type="number" id="rt_no" name="route" placeholder="Assign Route Number"><br/>
     <label for="driver">Assign Driver</label>
-    <input type="text" id="driver" placeholder="Assign Driver"><br/>
-    <label for="driver_id">Assign Driver ID</label>
-    <input type="number" id="driver_id" placeholder="Assign Driver ID"><br/>
+    <input type="text" id="driver" name="driver" placeholder="Assign Driver"><br/>
     <button id="addPickup">Add Pickup Point</button>
     <div id="pickup"></div>
-    <button id="save">Save</button>
+    <button id="save" name="save">Save</button>
     
   </form>
 </div>
