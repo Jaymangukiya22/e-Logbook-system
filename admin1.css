@@ -1,0 +1,126 @@
+
+#mySidenav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    z-index: 1;
+}
+button{
+    margin-left: 10px;
+    border: none;
+    background-color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+}
+button:hover{
+    cursor: pointer;
+    color: #3e8e41;
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    position: absolute;
+    left: 1%;
+    font-size: larger;
+    text-decoration: none;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+    margin: 25px;
+    padding: 25px;
+}
+/* #route{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px #3e8e41;
+    width: 300px;
+} */
+#drivers {
+    position: relative;
+    display: none;
+    top: 20px;
+    margin:auto; /* Center horizontally */
+    padding: 20px;
+    
+    width: 300px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: white;
+}
+#students {
+    position: relative;
+    display: none;
+    top: 20px;
+    margin:auto; /* Center horizontally */
+    padding: 20px;
+    
+    width: 300px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: white;
+}
+
+label{
+    display: block;
+}
+#drivers input, #students input{
+    width: 250px;
+    height: 25px;
+}
+#driver_submit, #student_submit{
+    background-color: #3e8e41;
+    margin-top: 25px;
+    color: white;
+    width: 80px;
+    height: 40px;
+    margin-left: 0px;
+}
+
+#drivers .title, #students .title{
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #3e8e41;
+}
+#driver_cancel, #student_cancel{
+    background-color: gray;
+    width: 80px;
+    height: 40px;
+    color: white;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    z-index: 1;
+    display: none; /* Initially hidden */
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
