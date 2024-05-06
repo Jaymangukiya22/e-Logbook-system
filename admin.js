@@ -1,4 +1,4 @@
-function btnclk() {
-        window.location.href = "admin.php";
+// function btnclk() {
+//         window.location.href = "admin.php";
     
-}
+// }
