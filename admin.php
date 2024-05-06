@@ -21,12 +21,14 @@ if(isset($_POST['add'])){
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="admin1.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
   <div id="main">
+  <a href="index.html">HOME</a>
     <h1>ADMIN PAGE</h1>
-    <a href="index.html">HOME</a>
+    
     <p class="demo"></p>
     
   </div>
@@ -103,14 +105,16 @@ if(isset($_POST['add'])){
 </div>
 
 <div id="table">
-<h3 >Driver Details</h3>
-<table class="table">
+<h3 style="margin-left:40px;">Driver Details</h3>
+<table class="table" style="margin-left:40px;">
   <thead>
     <tr>
+    
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Phone</th>
       <th scope="col">Route</th>
+      <th scope="col">Operations</th>
     </tr>
   </thead>
   <tbody>
@@ -128,35 +132,26 @@ if(isset($_POST['add'])){
             <td>'.$name.'</td>
             <td>'.$phone.'</td>
             <td>'.$route.'</td>
+            <td>
+            <a class="btn btn-danger text-light" href="delete.php?id=' . $id . '">Delete</a>
+            <a class="btn btn-primary text-light" href="delete.php?id=' . $id . '">Update</a>
+
+            </td>
+            
           </tr>';
         }
         
     }
     
     ?>
-    <!-- <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
+    
   </tbody>
 </table>
 </div>
 
 <script 
 src="admin1.js">
+            // <button style="background-color:red;"><a class="text-light" href="delete.php?id='.$id.'">Delete</a></button>
 
 </script>
    
