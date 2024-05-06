@@ -2,10 +2,11 @@
 include 'connect.php';
 if(isset($_POST['add'])){
     $id = $_POST['id'];
+    $password = $_POST['password'];
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $route = $_POST['route'];
-    $sql = "insert into admin_driver (id, name, phone, route) values('$id','$name','$phone','$route')";
+    $sql = "insert into admin_driver (id, password, name, phone, route) values('$id','$password','$name','$phone','$route')";
     $result = mysqli_query($conn,$sql);
     if($result){
         echo "Driver added successfully";
@@ -17,7 +18,7 @@ if(isset($_POST['add'])){
 if(isset($_POST['st_add'])){
     $gr = $_POST['gr'];
     $name = $_POST['name'];
-    $password = $_POST['pass'];
+    $password = $_POST['password'];
     $shift = $_POST['shift'];
     $route = $_POST['route'];
     $sql = "insert into admin_student (gr, name, password,shift, route) values('$gr','$name','$password','$shift','$route')";
@@ -69,6 +70,10 @@ if(isset($_POST['st_add'])){
       <label>ID</label>
       <input type="number" id="driver_ID" class="formcontrol" name="id" autocomplete="off">
   </div>
+  <div class="formgroup">
+      <label>Password</label>
+      <input type="password" id="student_pass" class="formcontrol" name="password" autocomplete="off">
+  </div>
     <div class="formgroup">
       <label>Name</label>
       <input type="text" id="driver_name" class="formcontrol" name="name" autocomplete="off">
@@ -107,7 +112,7 @@ if(isset($_POST['st_add'])){
   </div>
   <div class="formgroup">
       <label>Password</label>
-      <input type="password" id="student_pass" class="formcontrol" name="pass" autocomplete="off">
+      <input type="password" id="student_pass" class="formcontrol" name="password" autocomplete="off">
   </div>
   <div class="formgroup">
       <label>Shift</label>
@@ -132,6 +137,7 @@ if(isset($_POST['st_add'])){
     
       <th scope="col">ID</th>
       <th scope="col">Name</th>
+      <th scope="col">Password</th>
       <th scope="col">Phone</th>
       <th scope="col">Route</th>
       <th scope="col">Operations</th>
@@ -143,13 +149,16 @@ if(isset($_POST['st_add'])){
     $result = mysqli_query($conn,$sql);
     if($result){
         while($row=mysqli_fetch_assoc($result)){
+      
             $id = $row['id'];
+            $password = $row['password'];
             $name = $row['name'];
             $phone = $row['phone'];
             $route = $row['route'];
             echo'<tr>
             <th scope="row">'.$id.'</th>
             <td>'.$name.'</td>
+            <td>'.$password.'</td>
             <td>'.$phone.'</td>
             <td>'.$route.'</td>
             <td>
