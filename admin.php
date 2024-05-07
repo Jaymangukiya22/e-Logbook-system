@@ -6,13 +6,21 @@ if(isset($_POST['add'])){
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $route = $_POST['route'];
-    $sql = "insert into admin_driver (id, password, name, phone, route) values('$id','$password','$name','$phone','$route')";
-    $result = mysqli_query($conn,$sql);
-    if($result){
+    
+    $check = "SELECT * FROM admin_driver WHERE id = '$id'";
+    $result = mysqli_query($conn, $check);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "Error: Driver ID '$id' already exists<br>";
+    } else {
+      $sql = "insert into admin_driver (id, password, name, phone, route) values('$id','$password','$name','$phone','$route')";
+      $res = mysqli_query($conn,$sql);
+      if($res){
         echo "Driver added successfully";
-    }else{
-        die(mysqli_error($conn));
-    }
+      }else{
+          die(mysqli_error($conn));
+      }
+  }
 }
 
 if(isset($_POST['st_add'])){
@@ -21,13 +29,21 @@ if(isset($_POST['st_add'])){
     $password = $_POST['password'];
     $shift = $_POST['shift'];
     $route = $_POST['route'];
-    $sql = "insert into admin_student (gr, name, password,shift, route) values('$gr','$name','$password','$shift','$route')";
-    $result = mysqli_query($conn,$sql);
-    if($result){
+    
+    $check = "SELECT * FROM admin_student WHERE gr = '$gr'";
+    $result = mysqli_query($conn, $check);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "Error: Student GR No. '$gr' already exists<br>";
+    } else {
+      $sql = "insert into admin_student (gr, name, password,shift, route) values('$gr','$name','$password','$shift','$route')";
+    $res = mysqli_query($conn,$sql);
+    if($res){
         echo "Student added successfully";
     }else{
         die(mysqli_error($conn));
     }
+  }
 }
 ?>
 

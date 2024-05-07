@@ -7,8 +7,8 @@ function updateDateTime() {
 
 updateDateTime();
 setInterval(updateDateTime, 1000);
-function a() {
+function confirmLogout() {
     if (confirm("Are you sure you want to logout?")) {
-        window.location.href = "driver.php"; // Redirect to logout page
+        window.location.href = "student.php"; 
     }
 }

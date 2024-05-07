@@ -15,6 +15,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <link rel="stylesheet" href="student_data.css">
 </head>
 <body>
+    <div id="date-time"></div>
     <div>
         <h3 class="welcome">Student Name: <?php echo $_SESSION['name']; ?></h3>
         <h3 class="gr">GR No: <?php echo $_SESSION['gr']; ?></h3>
@@ -37,7 +38,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
        ?>
     </div>
     <div class="a">
-        <a href="logout.php">Logout</a> 
+        <!-- <a href="student.php">Logout</a>  -->
+        <a href="#" onclick="confirmLogout()">Logout</a>
+
     </div>
+    <script src="student_data.js" ></script>
 </body>
 </html>

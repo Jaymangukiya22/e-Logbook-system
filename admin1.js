@@ -10,6 +10,10 @@ function cancel(){
     drivers.style.display = "none";
     students.style.display = "none";
 }
+function clk(){
+    window.location.href = "route.php";
+
+}
 
 document.getElementById('driver').addEventListener('click', function() {
     var background = document.getElementById('background');
