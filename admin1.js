@@ -11,7 +11,7 @@ function cancel(){
     students.style.display = "none";
 }
 function clk(){
-    window.location.href = "route.php";
+    window.location.href = "route1.php";
 
 }
 

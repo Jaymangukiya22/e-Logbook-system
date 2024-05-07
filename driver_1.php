@@ -33,7 +33,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
           <?php  
             }
        ?>
-            <button onclick="a()">Logout</button>
+            <button onclick="a()" >Logout</button>
         </div>
     </div>
     
@@ -56,6 +56,24 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <input type="text" id="to">
         </form>
     </fieldset>
-    <script src="driver_1.js"></script>
+    <script >
+        
+function updateDateTime() {
+    var now = new Date();
+    var dateTimeString = now.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+    document.getElementById('date-time').textContent = dateTimeString;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+function a() {
+    if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "logout.php"; // Redirect to logout page
+        
+        
+    }
+}
+
+    </script>
 </body>
 </html>

@@ -58,19 +58,23 @@ if(isset($_POST['st_add'])){
 <body>
   <div id="main">
   <a href="index.html">HOME</a>
-    <h1>ADMIN PAGE</h1>
+    <h1 style="font-weight: 700;color: #3e8e41; ">ADMIN PAGE</h1>
     
     <p class="demo"></p>
     
   </div>
 
 <div id="mySidenav" class="sidenav">
-
+  
+  <a href="index.html"><img src="file1.png" alt=""></a>
   <button id="driver">Drivers</button>
 
   <button id="student">Students</button>
-  <button id="add_rt" onclick="clk()">Routes</button>
-  <button>Database</button>
+  <button><a href="route.php" style="text-decoration: none; color:white; ">Route</a></button>
+  <button>Logbook</button>
+  <button><a href="admin.html" style="text-decoration: none; color: white; position:relative; bottom:0px;">Logout</a></button>
+
+
 </div>
 <div class="background" id="background">
   <h1></h1>
@@ -146,7 +150,7 @@ if(isset($_POST['st_add'])){
 </div>
 
 <div id="table">
-<h3 style="margin-left:40px; margin-bottom:20px;">Driver Details</h3>
+<h3 style="margin-left:40px; margin-bottom:20px;font-weight: 700;color: #3e8e41; ">Driver Details</h3>
 <table class="table" style="margin-left:40px;">
   <thead>
     <tr>
@@ -196,7 +200,7 @@ if(isset($_POST['st_add'])){
 </div>
 
 <div id="table">
-<h3 style="margin-left:40px; margin-bottom:20px;">Student Details</h3>
+<h3 style="margin-left:40px; margin-bottom:20px;font-weight: 700;color: #3e8e41;">Student Details</h3>
 <table class="table" style="margin-left:40px;">
   <thead>
     <tr>
