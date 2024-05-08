@@ -65,13 +65,17 @@ if(isset($_POST['st_add'])){
   </div>
 
 <div id="mySidenav" class="sidenav">
-  
+<div id="image">
   <a href="index.html"><img src="file1.png" alt=""></a>
+
+  </div>
   <button id="driver">Drivers</button>
 
   <button id="student">Students</button>
+  
   <button><a href="route.php" style="text-decoration: none; color:white; ">Route</a></button>
-  <button>Logbook</button>
+
+  <button><a href="logbook.php" style="text-decoration: none; color:white; ">Logbook</a></button>
   <button><a href="admin.html" style="text-decoration: none; color: white; position:relative; bottom:0px;">Logout</a></button>
 
 

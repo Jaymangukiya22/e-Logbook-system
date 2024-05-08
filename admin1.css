@@ -34,6 +34,12 @@ button:hover{
     margin-bottom: 10px;
     
   }
+  /* #image{
+    width: 250px;
+    height: 0px;
+    background-color: white;
+    
+  } */
   .sidenav button {
     padding: 16px;
     text-decoration: none;
@@ -71,7 +77,9 @@ button:hover{
 #table{
     margin-top: 30px;
 }
-
+#ip input{
+    width: 100px;
+}
 #main{
     display: flex;
     justify-content: center;
