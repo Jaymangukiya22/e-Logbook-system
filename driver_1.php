@@ -5,35 +5,64 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: student.php");
     exit();
 }
-?>
 
-<?php
+date_default_timezone_set('Asia/Kolkata');
+
+$time = time();
+$date = date('Y-m-d', $time);
+
 if(isset($_POST['start'])){
-    $route = $_POST['route'];
+    $route_start = $_POST['route_start'];
     $km_start = $_POST['km_start'];
     $fuel_start = $_POST['fuel_start'];
     $from_start = $_POST['from_start'];
-    $sql = "insert into trip_start ( km_start, fuel_start, from_start, route) values ('$km_start', '$fuel_start', '$from_start', '$route')";
-    if(mysqli_query($conn, $sql)){
-        //header("Location: driver_1.php");
-}else{
-    die(mysqli_error($conn));
-}}
-?>
+    $_SESSION['km_start'] = $km_start;
+    $check_sql = "SELECT * FROM trip_start WHERE route = '$route_start' AND date_start = '$date'";
+    $check_result = mysqli_query($conn, $check_sql);
+    if(mysqli_num_rows($check_result) > 0) {
+        echo "You have already submitted a start entry for this route today.";
+    } else {//$route_end == $_SESSION['route']
+        if($route_start == $_SESSION['route']){
+            $sql = "INSERT INTO trip_start (date_start, km_start, fuel_start, from_start, route) VALUES ('$date', '$km_start', '$fuel_start', '$from_start', '$route_start')";
+        if(mysqli_query($conn, $sql)){
+            header("Location: driver_1.php");
+            exit();
+        } else {
+            die(mysqli_error($conn));
+        }
+        }else{
+            echo "You are not assigned to this route.";
+        }
+    }
+}
 
-<?php
 if(isset($_POST['end'])){
-    $route = $_POST['route'];
+    $route_end = $_POST['route_end'];
     $km_end = $_POST['km_end'];
     $fuel_end = $_POST['fuel_end'];
     $to_end = $_POST['to_end'];
-    $sql1 = "insert into trip_end ( km_end, fuel_end, to_end, route) values ('$km_end', '$fuel_end', '$to_end', '$route')";
-    if(mysqli_query($conn, $sql1)){
-        //header("Location: driver_1.php");
-}else{
-    die(mysqli_error($conn));
-}}
+   
+    $check_sql = "SELECT * FROM trip_end WHERE route = '$route_end' AND date_end = '$date'";
+    $check_result = mysqli_query($conn, $check_sql);
+    if(mysqli_num_rows($check_result) > 0) {
+        echo "You have already submitted an end entry for this route today.";
+    } else {
+        if($route_end == $_SESSION['route']&& $km_end>$_SESSION['km_start']){
+            $sql1 = "INSERT INTO trip_end (date_end, km_end, fuel_end, to_end, route) VALUES ('$date', '$km_end', '$fuel_end', '$to_end', '$route_end')";
+        if(mysqli_query($conn, $sql1)){
+            header("Location: driver_1.php");
+            exit();
+        } else {
+            die(mysqli_error($conn));
+        }
+        }else{
+            echo 'You are not assigned to this route or Distance travelled is less than 0!';
+        }
+    }
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,9 +102,9 @@ if(isset($_POST['end'])){
         <legend>HEY</legend> -->
         <form method="post" action="driver_1.php">
             <div id="fieldset">
-            <h4 style="padding:-5px;">Trip Starttt Details:</h4>
+            <h4 style="padding:-5px;">Trip Start Details:</h4>
             <label for="route">Route No.</label>
-            <input type="number" id="route" name="route"><br/>
+            <input type="number" id="route" name="route_start"><br/>
             <label for="km_start">KMs. Reading at trip start</label>
             <input type="number" id="km_start" name="km_start"><br/>
             <label for="fuel_start">Fuel Reading at trip start</label>
@@ -93,7 +122,7 @@ if(isset($_POST['end'])){
             <div id="fieldset1">
             <h4 style="padding:-5px;">Trip End Details:</h4>
             <label for="route">Route No.</label>
-            <input type="number" id="route" name="route"><br/>
+            <input type="number" id="route" name="route_end"><br/>
             <label for="km_end">KMs. Reading at trip end</label>
             <input type="number" id="km_end" name="km_end"><br/>
             <label for="fuel_end">Fuel Reading at trip end</label>
@@ -112,6 +141,8 @@ function updateDateTime() {
     var dateTimeString = now.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
     document.getElementById('date-time').textContent = dateTimeString;
 }
+
+
 
 updateDateTime();
 setInterval(updateDateTime, 1000);

@@ -178,8 +178,8 @@ $result = mysqli_query($conn, $sql);
                     echo '<p>GR No.: ' . $student_row['gr'] . '</p>';
                 }
             }
-                    echo '<a class="btn btn-danger text-light" href="delete_route.php?route=' . $route . '">Delete</a>';
-            echo '<a class="btn btn-primary text-light update-btn" href="update_route.php?route=' . $route . '">Update</a>';
+                    echo '<a class="btn btn-danger text-light"  href="delete_route.php?route=' . $route . '">Delete</a>';
+            echo '<a class="btn btn-primary text-light update-btn" style="margin-left:10px;" href="update_route.php?route=' . $route . '">Update</a>';
             
             echo '<hr>';
             echo '</div>';
